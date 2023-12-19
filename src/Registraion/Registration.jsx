@@ -15,7 +15,7 @@ const Registration = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    // here i need to ass logic to registration for example make a POST request to the server when the server is working
+    // here i need to add logic to registration for example make a POST request to the server when the server is working
 
     console.log('Form Data:', formData);
 
