@@ -6,6 +6,7 @@ const Registration = () => {
     username: '',
     email: '',
     password: '',
+    confirmPassword: '',
   });
 
   const handleInputChange = (e) => {
@@ -15,15 +16,21 @@ const Registration = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    // here i need to add logic to registration for example make a POST request to the server when the server is working
 
+ 
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    // Add logic to handle registration  make a POST request to the server once the server is working
     console.log('Form Data:', formData);
-
 
     setFormData({
       username: '',
       email: '',
       password: '',
+      confirmPassword: '',
     });
   };
 
@@ -57,6 +64,16 @@ const Registration = () => {
             type="password"
             name="password"
             value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+        </label>
+        <label>
+          Confirm Password:
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
             onChange={handleInputChange}
             required
           />
